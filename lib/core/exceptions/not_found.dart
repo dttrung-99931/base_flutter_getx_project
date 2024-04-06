@@ -1,0 +1,2 @@
+class NotFoundException implements Exception {
+}
