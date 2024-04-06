@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:base_flutter_getx/core/exceptions/no_internet.dart';
+import 'package:base_flutter_getx/core/error/exceptions/no_internet.dart';
 import 'package:base_flutter_getx/core/utils/utils.dart';
 
 import 'error_report_service.dart';

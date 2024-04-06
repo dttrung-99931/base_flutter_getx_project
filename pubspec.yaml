@@ -14,6 +14,7 @@ dependencies:
   get: ^4.6.5
   shared_preferences: ^2.2.2
   flutter_screenutil: ^5.0.0+2
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:

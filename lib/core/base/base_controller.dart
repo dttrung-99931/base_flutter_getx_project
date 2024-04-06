@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:base_flutter_getx/core/error/app_error.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
 
 class BaseController extends GetxController {
   final _isLoading = false.obs;
@@ -12,25 +14,42 @@ class BaseController extends GetxController {
   @protected
   set isLoading(bool value) => _isLoading.value = value;
 
-  /// Generic function for listening change of a obversable variable 
+  /// Generic function for listening change of a obversable variable
   /// and keep the subscription of listening to cancel when controller disposed
   void listen<T>(RxNotifier<T> notifier, Function(T) onChanged) {
     _subscriptions.add(notifier.listen(onChanged));
   }
 
-  @override
-  void dispose() {
-    _subscriptions.forEach((element) => element.cancel());
-    super.dispose();
+  Future<void> showSnackbar(String msg)  async {
+    await Get.snackbar(msg, msg,  colorText: Colors.black,).future;
   }
 
-  Future<void> load(Function load) async {
+  Future<void> handleServiceResult<T>({
+    required Future<Either<AppError, T>> serviceResult,
+    required Function(T result) onSuccess,
+    Function(AppError result)? onError,
+    bool handleLoading = true,
+  }) async {
     isLoading = true;
-    await load();
+    Either<AppError, T> result = await serviceResult;
+    result.fold(
+      onError ?? onErrorDefault,
+      onSuccess,
+    );
     isLoading = false;
   }
 
-  Future<void> showSnackbar(String msg) {
-    return Get.snackbar('', msg).show();
+  void onErrorDefault(appError) {
+    showSnackbar(appError.message ?? 'Sth went wrong');
   }
+
+    @override
+  void dispose() {
+    for (StreamSubscription element in _subscriptions) {
+      element.cancel();
+    }
+    super.dispose();
+  }
+
+
 }

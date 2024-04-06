@@ -3,9 +3,11 @@ import 'package:get/get.dart';
 import 'package:base_flutter_getx/core/constants/sizes.dart';
 import 'package:base_flutter_getx/shared/widgets/composed_button.dart';
 import '../../core/base/base_get_widget.dart';
-import 'controller.dart';
+import 'home_controller.dart';
 
 class HomeScreen extends BaseGetWidget<HomeController> {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
