@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-class LoginResponseModel {
+class LoginResponseDto {
   final int userID;
   final String token;
-  LoginResponseModel({
+  LoginResponseDto({
     required this.userID,
     required this.token,
   });
@@ -16,8 +16,8 @@ class LoginResponseModel {
     };
   }
 
-  factory LoginResponseModel.fromMap(Map<String, dynamic> map) {
-    return LoginResponseModel(
+  factory LoginResponseDto.fromMap(Map<String, dynamic> map) {
+    return LoginResponseDto(
       userID: map['userID'] as int,
       token: map['token'] as String,
     );
@@ -25,5 +25,5 @@ class LoginResponseModel {
 
   String toJson() => json.encode(toMap());
 
-  factory LoginResponseModel.fromJson(String source) => LoginResponseModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory LoginResponseDto.fromJson(String source) => LoginResponseDto.fromMap(json.decode(source) as Map<String, dynamic>);
 }

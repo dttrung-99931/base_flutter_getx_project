@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:base_flutter_getx/core/constants/sizes.dart';
-import 'package:base_flutter_getx/shared/widgets/composed_button.dart';
+import 'package:base_flutter_getx/shared/widgets/title_icon_button.dart';
 import '../../core/base/base_get_widget.dart';
 import 'home_controller.dart';
 
@@ -23,7 +23,7 @@ class HomeScreen extends BaseGetWidget<HomeController> {
                 () => Text("Counter ${controller.counter.value}"),
               ),
               const SizedBox(height: Sizes.s16),
-              ComposedButton(
+              TitleIconButton(
                 iconData: Icons.plus_one,
                 title: 'add'.tr,
                 onPressed: () {
@@ -31,7 +31,7 @@ class HomeScreen extends BaseGetWidget<HomeController> {
                 },
               ),
               const SizedBox(height: Sizes.s8),
-              ComposedButton(
+              TitleIconButton(
                 iconData: Icons.exposure_minus_1,
                 title: 'subtract'.tr,
                 onPressed: () {

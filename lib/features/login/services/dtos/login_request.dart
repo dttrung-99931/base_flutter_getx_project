@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-class LoginRequestModel {
+class LoginRequestDto {
   final String phone; 
   final String password; 
-  LoginRequestModel({
+  LoginRequestDto({
     required this.phone,
     required this.password,
   });
@@ -16,8 +16,8 @@ class LoginRequestModel {
     };
   }
 
-  factory LoginRequestModel.fromMap(Map<String, dynamic> map) {
-    return LoginRequestModel(
+  factory LoginRequestDto.fromMap(Map<String, dynamic> map) {
+    return LoginRequestDto(
       phone: map['phone'] as String,
       password: map['password'] as String,
     );
@@ -25,5 +25,5 @@ class LoginRequestModel {
 
   String toJson() => json.encode(toMap());
 
-  factory LoginRequestModel.fromJson(String source) => LoginRequestModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory LoginRequestDto.fromJson(String source) => LoginRequestDto.fromMap(json.decode(source) as Map<String, dynamic>);
 }

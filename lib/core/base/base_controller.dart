@@ -24,17 +24,18 @@ class BaseController extends GetxController {
     await Get.snackbar(msg, msg,  colorText: Colors.black,).future;
   }
 
-  Future<void> handleServiceResult<T>({
-    required Future<Either<AppError, T>> serviceResult,
-    required Function(T result) onSuccess,
+  Future<void> handleServiceResult<Dto, Model>({
+    required Future<Either<AppError, Dto>> serviceResult,
+    required Function(Model result) onSuccess,
+    required Model Function(Dto dto) dtoToModel,
     Function(AppError result)? onError,
     bool handleLoading = true,
   }) async {
     isLoading = true;
-    Either<AppError, T> result = await serviceResult;
+    Either<AppError, Dto> result = await serviceResult;
     result.fold(
       onError ?? onErrorDefault,
-      onSuccess,
+      (Dto data) => onSuccess(dtoToModel(data)),
     );
     isLoading = false;
   }

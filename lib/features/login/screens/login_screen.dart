@@ -1,12 +1,13 @@
 import 'package:base_flutter_getx/core/constants/themes.dart';
-import 'package:base_flutter_getx/shared/widgets/composed_button.dart';
+import 'package:base_flutter_getx/core/utils/extension/num_extensions.dart';
+import 'package:base_flutter_getx/shared/widgets/title_icon_button.dart';
 import 'package:base_flutter_getx/shared/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
-import '../../core/base/base_get_widget.dart';
-import 'login_controller.dart';
+import '../../../core/base/base_get_widget.dart';
+import '../controllers/login_controller.dart';
 
 class LoginScreen extends BaseGetWidget<LoginController> {
   LoginScreen({super.key});
@@ -24,7 +25,7 @@ class LoginScreen extends BaseGetWidget<LoginController> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 64.h),
+                64.hsb,
                 Text(
                   'Login',
                   style: TextStyle(fontSize: 24.sp, color: kPrimarySwatch),
@@ -38,7 +39,7 @@ class LoginScreen extends BaseGetWidget<LoginController> {
                   ),
                   textInputAction: TextInputAction.next,
                 ),
-                SizedBox(height: 16.h),
+                16.hsb,
                 TextFormField(
                   controller: passwordController,
                   decoration: const InputDecoration(

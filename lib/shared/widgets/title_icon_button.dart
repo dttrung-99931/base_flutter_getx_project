@@ -4,7 +4,7 @@ import 'package:base_flutter_getx/core/constants/themes.dart';
 import 'package:flutter/material.dart';
 
 /// Composed buttton with icon, title 
-class ComposedButton extends StatelessWidget {
+class TitleIconButton extends StatelessWidget {
   final IconData? iconData;
   final Function() onPressed;
   final double iconSize;
@@ -14,7 +14,7 @@ class ComposedButton extends StatelessWidget {
   final bool expanded;
   final double iconAndTitleSpace;
 
-  const ComposedButton({super.key, 
+  const TitleIconButton({super.key, 
     this.iconData,
     required this.title,
     required this.onPressed,
