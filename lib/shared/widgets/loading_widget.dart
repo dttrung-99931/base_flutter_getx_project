@@ -1,5 +1,5 @@
 
-import 'package:base_flutter_getx/core/constants/sizes.dart';
+import 'package:base_flutter_getx/core/constants/diemsions/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class LoadingWidget extends StatelessWidget {
@@ -10,9 +10,9 @@ class LoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: Sizes.s24,
-      height: Sizes.s24,
-      padding: const EdgeInsets.all(Sizes.s4),
+      width: s24,
+      height: s24,
+      padding: EdgeInsets.all(s4),
       child: const CircularProgressIndicator(
         backgroundColor: Colors.white,
         strokeWidth: 2,

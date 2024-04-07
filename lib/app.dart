@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:base_flutter_getx/core/base/base_get_widget.dart';
-import 'package:base_flutter_getx/core/constants/routes.dart';
+import 'package:base_flutter_getx/config/routes.dart';
 import 'package:base_flutter_getx/core/constants/themes.dart';
 import 'package:base_flutter_getx/features/login/login_route.dart';
 import 'package:base_flutter_getx/features/settings/controller.dart';
@@ -15,7 +15,7 @@ import 'features/home/home_route.dart';
 class App extends BaseGetWidget<SettingController> {
   final String initialRoute;
   const App({super.key, 
-    this.initialRoute = RouteNames.login,
+    this.initialRoute = Routes.login,
   });
 
 
@@ -35,7 +35,7 @@ class App extends BaseGetWidget<SettingController> {
           defaultTransition: Transition.cupertino,
           transitionDuration: const Duration(milliseconds: 800),
           debugShowCheckedModeBanner: false,
-          theme: kAppTheme,
+          theme: buildTheme(context),
           // Config translation
           translations: AppTranslation(),
           locale: controller.currentLocale,        

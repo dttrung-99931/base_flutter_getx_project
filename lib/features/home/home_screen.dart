@@ -1,7 +1,8 @@
+import 'package:base_flutter_getx/core/constants/diemsions/dimensions.dart';
+import 'package:base_flutter_getx/shared/widgets/title_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:base_flutter_getx/core/constants/sizes.dart';
-import 'package:base_flutter_getx/shared/widgets/title_icon_button.dart';
+
 import '../../core/base/base_get_widget.dart';
 import 'home_controller.dart';
 
@@ -22,7 +23,7 @@ class HomeScreen extends BaseGetWidget<HomeController> {
               Obx(
                 () => Text("Counter ${controller.counter.value}"),
               ),
-              const SizedBox(height: Sizes.s16),
+              h16sb,
               TitleIconButton(
                 iconData: Icons.plus_one,
                 title: 'add'.tr,
@@ -30,7 +31,7 @@ class HomeScreen extends BaseGetWidget<HomeController> {
                   controller.increase();
                 },
               ),
-              const SizedBox(height: Sizes.s8),
+              h8sb,
               TitleIconButton(
                 iconData: Icons.exposure_minus_1,
                 title: 'subtract'.tr,

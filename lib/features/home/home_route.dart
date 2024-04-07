@@ -1,10 +1,10 @@
 import 'package:base_flutter_getx/features/home/home_controller.dart';
 import 'package:get/get.dart';
-import '../../core/constants/routes.dart';
+import '../../config/routes.dart';
 import 'home_screen.dart';
 
 final homeRoute = GetPage(
-  name: RouteNames.home,
-  page: () => HomeScreen(),
+  name: Routes.home,
+  page: () => const HomeScreen(),
   binding: BindingsBuilder.put(() => HomeController()),
 );

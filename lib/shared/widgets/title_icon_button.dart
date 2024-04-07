@@ -1,7 +1,8 @@
-import 'package:base_flutter_getx/core/constants/sizes.dart';
-import 'package:base_flutter_getx/core/constants/styles.dart';
+import 'package:base_flutter_getx/core/constants/colors.dart';
+import 'package:base_flutter_getx/core/constants/diemsions/dimensions.dart';
 import 'package:base_flutter_getx/core/constants/themes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// Composed buttton with icon, title 
 class TitleIconButton extends StatelessWidget {
@@ -14,16 +15,19 @@ class TitleIconButton extends StatelessWidget {
   final bool expanded;
   final double iconAndTitleSpace;
 
-  const TitleIconButton({super.key, 
+  TitleIconButton({super.key, 
     this.iconData,
     required this.title,
     required this.onPressed,
-    this.iconSize = Sizes.s20,
-    this.color = kPrimarySwatch,
-    this.padding = const EdgeInsets.all(Sizes.s4),
+    this.color = AppColors.primary,
     this.expanded = false,
-    this.iconAndTitleSpace = Sizes.s8,
-  });
+    double? iconSize ,
+    EdgeInsets? padding,
+    double? iconAndTitleSpace,
+  }): 
+  iconAndTitleSpace = iconAndTitleSpace ?? w8,
+  iconSize  = iconSize ?? s20,
+  padding = padding ?? EdgeInsets.all(s4);
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +42,8 @@ class TitleIconButton extends StatelessWidget {
             if (iconData != null) SizedBox(width: iconAndTitleSpace),
             Text(
               title,
-              style: Styles.textTitle.copyWith(
-                color: kPrimarySwatch,
+              style: textTheme.bodyMedium?.copyWith(
+                color: AppColors.primary,
               ),
             ),
           ],

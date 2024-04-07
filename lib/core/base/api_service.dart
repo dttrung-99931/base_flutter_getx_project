@@ -52,7 +52,7 @@ abstract class ApiService extends GetConnect implements GetxService{
       return Left(NetworkError());
     }
 
-    if (sucessfulStatusCodes.contains(response.statusCode) &&
+    if (Constants.sucessfulStatusCodes.contains(response.statusCode) &&
         (allowSuccessNullBody || response.body?.data != null)) {
       return Right(response.body?.data as T);
     }
