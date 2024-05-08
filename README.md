@@ -7,4 +7,4 @@
 
 ### Change bundle id
 Active rename (if not): `flutter pub global activate rename`
-Change bundle id: `rename --value your_bundle_id`
+Change bundle id: `rename setBundleId --value your_bundle_id`
