@@ -1,4 +1,3 @@
-import 'package:base_flutter_getx/config/assets/assets.dart';
 import 'package:base_flutter_getx/core/constants/diemsions/dimensions.dart';
 import 'package:base_flutter_getx/core/constants/themes.dart';
 import 'package:base_flutter_getx/shared/widgets/loading_widget.dart';

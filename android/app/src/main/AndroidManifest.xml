@@ -1,5 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.base.base_flutter_getx">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
    <application
         android:label="base_flutter_getx"
         android:name="${applicationName}"

@@ -1,6 +1,6 @@
 import 'package:base_flutter_getx/features/login/controllers/models/login_model.dart';
-import 'package:base_flutter_getx/features/login/services/dtos/login_request.dart';
-import 'package:base_flutter_getx/features/login/services/login_service.dart';
+import 'package:base_flutter_getx/features/login/screens/services/dtos/login_request.dart';
+import 'package:base_flutter_getx/features/login/screens/services/login_service.dart';
 import 'package:base_flutter_getx/shared/services/storage_service.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +12,7 @@ class LoginController extends BaseController {
   final Storage _storage = Get.find();
 
   Future<void> login(String phone, String password) async {
-     await handleServiceResult(
+    await handleServiceResult(
       serviceResult: _service.login(
         LoginRequestDto(phone: phone, password: password),
       ),

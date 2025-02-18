@@ -3,7 +3,6 @@
 import 'package:base_flutter_getx/core/constants/colors.dart';
 import 'package:base_flutter_getx/core/constants/diemsions/dimensions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 ThemeData buildTheme(BuildContext appContext) {
@@ -11,8 +10,24 @@ ThemeData buildTheme(BuildContext appContext) {
     primarySwatch: AppColors.primary,
     scaffoldBackgroundColor: AppColors.background,
     iconTheme: const IconThemeData(color: AppColors.primary),
-    appBarTheme:
-        const AppBarTheme(iconTheme: IconThemeData(color: Colors.white)),
+    appBarTheme: const AppBarTheme(
+      iconTheme: IconThemeData(color: Colors.white),
+      backgroundColor: AppColors.primary,
+    ),
+    buttonTheme: ButtonThemeData(
+      buttonColor: AppColors.primary,
+      textTheme: ButtonTextTheme.primary,
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: AppColors.primary,
+        foregroundColor: AppColors.white90, // Text color
+        textStyle: TextStyle(
+          fontSize: fz16,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    ),
     fontFamily: 'Urbanist',
     textTheme: Theme.of(appContext).textTheme.copyWith(
           titleLarge: TextStyle(
@@ -58,7 +73,6 @@ ThemeData buildTheme(BuildContext appContext) {
             fontSize: fz10,
             fontWeight: FontWeight.w600,
           ),
-          
         ),
   );
 }
