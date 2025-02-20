@@ -13,5 +13,10 @@ void main() async {
 
 Future<void> configDev() async {
   WidgetsFlutterBinding.ensureInitialized();
-  AppConfig.set(apiUrl: '', flavor: AppFlavor.dev);
+  AppConfig.set(
+    apiUrl: '',
+    flavor: AppFlavor.dev,
+    serpAPIKey:
+        '88a00f841eab63057b327fc357971ba9259f24d261b46111f71bc48c78b1bbf1',
+  );
 }

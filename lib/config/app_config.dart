@@ -7,20 +7,25 @@ class AppConfig {
   AppConfig._({
     required this.apiUrl,
     required this.flavor,
+    required this.serpAPIKey,
   });
 
   static void set({
     required String apiUrl,
     required AppFlavor flavor,
+    required String serpAPIKey,
   }) {
     _config = AppConfig._(
       apiUrl: apiUrl,
       flavor: flavor,
+      serpAPIKey: serpAPIKey,
     );
   }
 
   final String apiUrl;
   final AppFlavor flavor;
+  final String serpAPIKey;
+
   static AppConfig get config => _config!;
   static AppConfig? _config;
   static Map<AppFlavor, Function()> configurerMap = {
