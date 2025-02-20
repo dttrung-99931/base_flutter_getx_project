@@ -12,9 +12,9 @@ class LoginService extends ApiService {
       responseFuture: post(
         '/v1/Users/login',
         param.toJson(),
-        decoder: (data) => ResponseWrapper.fromMap(
-          data,
-          LoginResponseDto.fromMap,
+        decoder: (data) => ResponseWrapper.dataObject(
+          responseJson: data,
+          dataFromJson: LoginResponseDto.fromMap,
         ),
       ),
     );
