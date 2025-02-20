@@ -1,4 +1,4 @@
-import 'package:base_flutter_getx/core/base/api_service.dart';
+import 'package:base_flutter_getx/core/base/api_service/api_service.dart';
 import 'package:base_flutter_getx/core/base/base_model.dart';
 import 'package:base_flutter_getx/core/error/app_error.dart';
 import 'package:base_flutter_getx/features/login/screens/services/dtos/login_request.dart';
