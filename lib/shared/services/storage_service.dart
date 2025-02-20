@@ -7,10 +7,6 @@ class Storage extends GetxService {
 
   GetStorage get _storage => GetStorage();
 
-  Future<void> init() async {
-    await GetStorage.init();
-  }
-
   final _tokenStorage = ReadWriteValue<String?>(_keyToken, null);
   String? get token => _tokenStorage.val;
   set token(value) => _tokenStorage.val = value;

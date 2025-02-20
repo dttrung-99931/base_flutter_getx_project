@@ -14,6 +14,7 @@ import 'package:base_flutter_getx/shared/services/storage_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'features/home/home_route.dart';
 
@@ -34,8 +35,8 @@ Future<void> setup() async {
   FlutterError.onError = ExceptionHandler.handleSyncError;
   // Setup error ui builder that builds ui to notify errors to users
   ErrorWidget.builder = ExceptionHandler.errorWidgetBuilder;
+  await GetStorage.init();
   await GlobalBinding().dependencies();
-  await Get.find<Storage>().init();
 }
 
 class App extends BaseGetWidget<SettingController> {
