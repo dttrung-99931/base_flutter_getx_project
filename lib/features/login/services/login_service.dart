@@ -1,7 +1,7 @@
 import 'package:base_flutter_getx/core/base/api_service/api_service.dart';
 import 'package:base_flutter_getx/core/error/app_error.dart';
-import 'package:base_flutter_getx/features/login/screens/services/dtos/login_request.dart';
-import 'package:base_flutter_getx/features/login/screens/services/dtos/login_response.dart';
+import 'package:base_flutter_getx/features/login/services/dtos/login_request.dart';
+import 'package:base_flutter_getx/features/login/services/dtos/login_response.dart';
 import 'package:dartz/dartz.dart';
 
 class LoginService extends ApiService {

@@ -7,22 +7,26 @@ This is a base Flutter project utilizing the GetX package, featuring several pre
 ```
 lib/                    
 ├── config/             
+│   ├── assets/         # Assets class
 │   ├── app_config.dart 
 │   ├── routes.dart     
-│   ├── ...
 ├── core/               
 │   ├── base/           
 │   ├── constants/      
-│   ├── error_handler/  
-│   ├── ...
+│   ├── translation/  
+│   ├── utils/
 ├── features/           
 │   ├── login/          
-│   │   ├── controllers 
-│   │   ├── models      
-│   │   ├── screens     
-│   │   ├── services    
-│   │   ├── ...
-│   ├── ...
+│   │   ├── services/    
+│   │   │   ├── dtos/
+│   │   │   ├── login_service.dart      
+│   │   ├── controllers/ 
+│   │   │   ├── models/      
+│   │   │   ├── login_controllder.dart      
+│   │   ├── screens/     
+│   │   │   ├── widgets/
+│   │   │   ├── login_screen.dart
+│   │   ├── login_route.dart
 ├── shared/             
 │   ├── widgets/        
 │   ├── services/       

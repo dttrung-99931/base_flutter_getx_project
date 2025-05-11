@@ -1,7 +1,7 @@
 import 'package:base_flutter_getx/config/routes.dart';
 import 'package:base_flutter_getx/features/login/controllers/models/login_model.dart';
-import 'package:base_flutter_getx/features/login/screens/services/dtos/login_request.dart';
-import 'package:base_flutter_getx/features/login/screens/services/login_service.dart';
+import 'package:base_flutter_getx/features/login/services/dtos/login_request.dart';
+import 'package:base_flutter_getx/features/login/services/login_service.dart';
 import 'package:base_flutter_getx/shared/services/storage_service.dart';
 import 'package:get/get.dart';
 
