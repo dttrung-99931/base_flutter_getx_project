@@ -9,8 +9,6 @@ import 'package:base_flutter_getx/core/utils/error_handler/exception_handler.dar
 import 'package:base_flutter_getx/features/login/login_route.dart';
 import 'package:base_flutter_getx/features/settings/controller.dart';
 import 'package:base_flutter_getx/global_binding.dart';
-import 'package:base_flutter_getx/main_production.dart';
-import 'package:base_flutter_getx/shared/services/storage_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';

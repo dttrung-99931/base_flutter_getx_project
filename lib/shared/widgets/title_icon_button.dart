@@ -2,7 +2,6 @@ import 'package:base_flutter_getx/core/constants/colors.dart';
 import 'package:base_flutter_getx/core/constants/diemsions/dimensions.dart';
 import 'package:base_flutter_getx/core/constants/themes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// Composed buttton with icon, title 
 class TitleIconButton extends StatelessWidget {

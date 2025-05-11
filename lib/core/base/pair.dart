@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 
 class Pair<T, U> {
   T first;
