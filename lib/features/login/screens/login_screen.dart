@@ -1,7 +1,10 @@
+import 'package:base_flutter_getx/core/constants/colors.dart';
 import 'package:base_flutter_getx/core/constants/diemsions/dimensions.dart';
 import 'package:base_flutter_getx/core/constants/themes.dart';
+import 'package:base_flutter_getx/core/utils/extension/ui_extensions.dart';
 import 'package:base_flutter_getx/shared/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
 import '../../../core/base/base_get_widget.dart';
@@ -16,22 +19,21 @@ class LoginScreen extends BaseGetWidget<LoginController> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(),
-        body: Padding(
+        body: Container(
+          alignment: Alignment.center,
           padding: EdgeInsets.all(s16),
           child: SingleChildScrollView(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                h64sb,
+                h32sb,
                 Text(
-                  'Login',
+                  'Base GetX App',
                   style: textTheme.titleMedium,
                 ),
                 h32sb,
                 TextFormField(
                   controller: phoneController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     hintText: 'Số điện thoại',
                     border: OutlineInputBorder(),
                   ),
@@ -41,7 +43,7 @@ class LoginScreen extends BaseGetWidget<LoginController> {
                 h16sb,
                 TextFormField(
                   controller: passwordController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     hintText: 'Mật khẩu',
                     border: OutlineInputBorder(),
                   ),
@@ -51,7 +53,7 @@ class LoginScreen extends BaseGetWidget<LoginController> {
                 h32sb,
                 SizedBox(
                   width: double.infinity,
-                  height: h48,
+                  height: h40,
                   child: Obx(() {
                     return ElevatedButton(
                       onPressed: controller.isLoading
@@ -64,10 +66,13 @@ class LoginScreen extends BaseGetWidget<LoginController> {
                             },
                       child: controller.isLoading
                           ? const LoadingWidget()
-                          : const Text('Login'),
+                          : Text('Login',
+                              style: textTheme.bodyMedium
+                                  .withColor(AppColors.white)),
                     );
                   }),
                 ),
+                h64sb,
               ],
             ),
           ),
