@@ -1,3 +1,4 @@
+import 'package:base_flutter_getx/config/routes.dart';
 import 'package:base_flutter_getx/features/login/controllers/models/login_model.dart';
 import 'package:base_flutter_getx/features/login/screens/services/dtos/login_request.dart';
 import 'package:base_flutter_getx/features/login/screens/services/login_service.dart';
@@ -19,7 +20,7 @@ class LoginController extends BaseController {
       dtoToModel: LoginModel.fromDto,
       onSuccess: (LoginModel result) {
         _storage.token = result.token;
-        showSnackbar('Login success');
+        Get.offNamed(Routes.home);
       },
     );
   }

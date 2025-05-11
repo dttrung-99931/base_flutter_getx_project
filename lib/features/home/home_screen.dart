@@ -1,4 +1,7 @@
+import 'package:base_flutter_getx/core/constants/colors.dart';
 import 'package:base_flutter_getx/core/constants/diemsions/dimensions.dart';
+import 'package:base_flutter_getx/core/constants/themes.dart';
+import 'package:base_flutter_getx/core/utils/extension/ui_extensions.dart';
 import 'package:base_flutter_getx/shared/widgets/title_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,6 +17,11 @@ class HomeScreen extends BaseGetWidget<HomeController> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: Text(
+            'home'.tr,
+            style: textTheme.titleMedium.withColor(AppColors.white),
+          ),
         ),
         body: Center(
           child: Column(
@@ -23,7 +31,7 @@ class HomeScreen extends BaseGetWidget<HomeController> {
               Obx(
                 () => Text("Counter ${controller.counter.value}"),
               ),
-              h16sb,
+              h24sb,
               TitleIconButton(
                 iconData: Icons.plus_one,
                 title: 'add'.tr,
@@ -31,7 +39,7 @@ class HomeScreen extends BaseGetWidget<HomeController> {
                   controller.increase();
                 },
               ),
-              h8sb,
+              h16sb,
               TitleIconButton(
                 iconData: Icons.exposure_minus_1,
                 title: 'subtract'.tr,
