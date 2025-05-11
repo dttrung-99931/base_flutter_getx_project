@@ -1,37 +1,35 @@
-# Base Flutter Project
+# Flutter Getx Base Project
 
 ## Overview
 This is a base Flutter project utilizing the GetX package, featuring several pre-configured setups:
 
 - **Architecture**: Widget - Controller - Service
 ```
-base_flutter_getx/
-│
-├── lib/                    
-│   ├── app.dart            # App
-│   ├── global.dart         # Holding global data used in app
-│   ├── main_dev.dart       # Main dev
-│   ├── main_production.dart# Main prod
-│   ├── config/             # Configuration files
-│   │   ├── app_config.dart # App configuration
-│   │   ├── routes.dart     # Route configuration
+lib/                    
+├── config/             
+│   ├── app_config.dart 
+│   ├── routes.dart     
+│   ├── ...
+├── core/               
+│   ├── base/           
+│   ├── constants/      
+│   ├── error_handler/  
+│   ├── ...
+├── features/           
+│   ├── login/          
+│   │   ├── controllers 
+│   │   ├── models      
+│   │   ├── screens     
+│   │   ├── services    
 │   │   ├── ...
-│   ├── core/               # Core utilities and constants
-│   │   ├── base/           # Base widgets and controllers
-│   │   ├── constants/      # Constants
-│   │   ├── error_handler/  # Error handler
-│   │   ├── ...
-│   ├── features/           # Application features
-│   │   ├── login/          # Login feature
-│   │   │   ├── controllers # Controllers
-│   │   │   ├── models      # Models
-│   │   │   ├── screens     # Screens
-│   │   │   ├── services    # Services
-│   │   │   ├── ...
-│   │   ├── ...
-│   ├── shared/             # Shared widgets and services
-│   │   ├── widgets/        # Common widgets
-│   │   ├── services/       # Common services
+│   ├── ...
+├── shared/             
+│   ├── widgets/        
+│   ├── services/       
+├── app.dart            
+├── global.dart         
+├── main_dev.dart       
+├── main_production.dart
 ```
 
 - **Translation**: Built-in support for multiple languages  (check out SettingController)
