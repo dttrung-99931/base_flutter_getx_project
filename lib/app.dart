@@ -35,6 +35,7 @@ Future<void> setup() async {
   ErrorWidget.builder = ExceptionHandler.errorWidgetBuilder;
   await GetStorage.init();
   await GlobalBinding().dependencies();
+  await Get.find<SettingController>().onInit();
 }
 
 class App extends BaseGetWidget<SettingController> {

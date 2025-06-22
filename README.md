@@ -17,12 +17,12 @@ lib/
 │   ├── utils/
 ├── features/           
 │   ├── login/          
+│   │   ├── dtos/
 │   │   ├── services/    
-│   │   │   ├── dtos/
 │   │   │   ├── login_service.dart      
+│   │   ├── models/      
 │   │   ├── controllers/ 
-│   │   │   ├── models/      
-│   │   │   ├── login_controllder.dart      
+│   │   │   ├── login_controller.dart      
 │   │   ├── screens/     
 │   │   │   ├── widgets/
 │   │   │   ├── login_screen.dart

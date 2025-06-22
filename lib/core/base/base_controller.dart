@@ -23,33 +23,30 @@ class BaseController extends GetxController {
     await Get.snackbar(msg, msg,  colorText: Colors.black,).future;
   }
 
-  Future<void> handleServiceResult<Dto, Model>({
-    required Future<Either<AppError, Dto>> serviceResult,
+  Future<void> handleServiceResult<Model>({
+    required Future<Either<AppError, Model>> serviceResult,
     required Function(Model result) onSuccess,
-    required Model Function(Dto dto) dtoToModel,
     Function(AppError result)? onError,
     bool handleLoading = true,
   }) async {
     isLoading = true;
-    Either<AppError, Dto> result = await serviceResult;
+    Either<AppError, Model> result = await serviceResult;
     result.fold(
       onError ?? onErrorDefault,
-      (Dto data) => onSuccess(dtoToModel(data)),
+      (Model data) => onSuccess(data),
     );
     isLoading = false;
   }
 
-  void onErrorDefault(appError) {
-    showSnackbar(appError.message ?? 'Sth went wrong');
+  void onErrorDefault(AppError appError) {
+    showSnackbar(appError.message);
   }
 
-    @override
+  @override
   void dispose() {
     for (StreamSubscription element in _subscriptions) {
       element.cancel();
     }
     super.dispose();
   }
-
-
 }

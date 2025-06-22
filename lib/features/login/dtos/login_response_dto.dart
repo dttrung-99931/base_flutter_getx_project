@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:base_flutter_getx/features/login/models/login_response.dart';
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class LoginResponseDto {
   final int userID;
@@ -23,7 +24,12 @@ class LoginResponseDto {
     );
   }
 
+
   String toJson() => json.encode(toMap());
 
   factory LoginResponseDto.fromJson(String source) => LoginResponseDto.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  LoginResponse toModel() {
+    return LoginResponse(userID: userID, token: token);
+  }
 }

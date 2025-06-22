@@ -7,10 +7,10 @@ import 'core/utils/error_handler/error_report_service.dart';
 class GlobalBinding extends Bindings {
   // Provide dependencies used before GetMaterialApp created
   @override
-  Future<void> dependencies() async{
-    Get.put(Storage());
-    Get.put(ErrorReportService());
-    Get.put(MainController());
-    await Get.putAsync(SettingController.create);
+  Future<void> dependencies() async {
+    Get.lazyPut(() => Storage());
+    Get.lazyPut(() => ErrorReportService());
+    Get.lazyPut(() => MainController());
+    Get.lazyPut(() => SettingController(storage: Get.find()));
   }
 }

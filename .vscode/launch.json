@@ -5,14 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "base_flutter_getx (dev)",
+            "name": "Run dev debug",
             "request": "launch",
             "type": "dart",
             "flutterMode": "debug",
             "program": "lib/main_dev.dart"
         },
         {
-            "name": "base_flutter_getx (release mode)",
+            "name": "Run prod debug",
             "request": "launch",
             "type": "dart",
             "flutterMode": "debug",
