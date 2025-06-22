@@ -18,19 +18,23 @@ lib/
 ├── features/           
 │   ├── login/          
 │   │   ├── dtos/
+│   │   │   ├── login_request_dto.dart   # Dto data class   
+│   │   │   ├── login_response_dto.dart  # Dto data class
 │   │   ├── services/    
-│   │   │   ├── login_service.dart      
+│   │   │   ├── login_service.dart       # Absctract service
+│   │   │   ├── login_service_impl.dart  # Implementation  
 │   │   ├── models/      
+│   │   │   ├── login_response.dart      # Business data class
 │   │   ├── controllers/ 
-│   │   │   ├── login_controller.dart      
+│   │   │   ├── login_controller.dart    # Getx controller, hanlde feature logic: service - controller - ui
 │   │   ├── screens/     
 │   │   │   ├── widgets/
 │   │   │   ├── login_screen.dart
-│   │   ├── login_route.dart
+│   │   ├── login_route.dart             # Declare route, dependencies using GetPage  
 ├── shared/             
 │   ├── widgets/        
 │   ├── services/       
-├── app.dart            
+├── app.dart                             # Hold app data for accessing globally
 ├── global.dart         
 ├── main_dev.dart       
 ├── main_production.dart
