@@ -4,15 +4,37 @@ import 'package:base_flutter_getx/core/constants/themes.dart';
 import 'package:base_flutter_getx/core/utils/extension/ui_extensions.dart';
 import 'package:base_flutter_getx/shared/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get.dart';
 
-import '../../../core/base/base_get_widget.dart';
 import '../controllers/login_controller.dart';
 
-class LoginScreen extends BaseGetWidget<LoginController> {
-  LoginScreen({super.key});
-  final phoneController = TextEditingController();
-  final passwordController = TextEditingController();
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> with WidgetsBindingObserver {
+  late final TextEditingController phoneController;
+  late final TextEditingController passwordController;
+
+  late final LoginController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    phoneController = TextEditingController();
+    passwordController = TextEditingController();
+    controller = Get.find<LoginController>();
+  }
+
+  @override
+  void dispose() {
+    phoneController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,8 +76,9 @@ class LoginScreen extends BaseGetWidget<LoginController> {
                   width: double.infinity,
                   height: h40,
                   child: Obx(() {
+                    // Use the controller instance from the state
                     return ElevatedButton(
-                      onPressed: controller.isLoading
+                      onPressed: controller.isLoading // Access the RxBool value
                           ? null
                           : () {
                               controller.login(
@@ -63,7 +86,7 @@ class LoginScreen extends BaseGetWidget<LoginController> {
                                 passwordController.text,
                               );
                             },
-                      child: controller.isLoading
+                      child: controller.isLoading // Access the RxBool value
                           ? const LoadingWidget()
                           : Text('Login',
                               style: textTheme.bodyMedium
