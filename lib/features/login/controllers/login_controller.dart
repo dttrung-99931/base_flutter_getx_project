@@ -8,7 +8,10 @@ import 'package:get/get.dart';
 import '../../../core/base/base_controller.dart';
 
 class LoginController extends BaseController {
-  LoginController({required LoginService loginService, required Storage storage}) : _service = loginService, _storage = storage;
+  LoginController(
+      {required LoginService loginService, required Storage storage})
+      : _service = loginService,
+        _storage = storage;
 
   final isLoginSucces = RxBool(false);
   final LoginService _service;
