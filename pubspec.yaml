@@ -15,6 +15,9 @@ dependencies:
   get_storage: ^2.1.1
   flutter_screenutil: ^5.9.3
   dartz: ^0.10.1
+  flutter_localizations:
+    sdk: flutter
+  shadcn_ui: ^0.56.1
 
 dev_dependencies:
   flutter_test:

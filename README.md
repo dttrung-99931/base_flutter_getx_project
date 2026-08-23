@@ -124,6 +124,8 @@ Ex: adding settings feature
     LoginForm, LoginButton, UserAvatar, PostTabs
   - A widget that is not in 2 types above => use 'Widget' suffix in name
     Ex: ForwardScrollToParentWidget(parentScrollController), ...
+- Shared widget naming:
+  - App prefix + common widget name like AppButton, AppForm, AppCheckBox, ...
 
 ### Service
 
@@ -188,6 +190,18 @@ class LoginController extends BaseController {
 
 - Every content string that display on widget need to be localized by
   declaring in en.dart & vi.dart then 'string_key'.tr to get localized string
+
+### UI
+
+- Screen UI is created from shared/widgets that include shared widget defined by app. Example:
+  AppButton {
+  - that use shadcn ui button under the hood
+  - no need to copy full params of shadcn button params,
+    start AppButton params with basic params. While implementing new feature, add new params if needed
+    }
+- Used shadcn-ui-flutter widgets
+- When implementing new ui, look at /shard/widgets first, if there is no desired ui widget. Use shadcn-ui-flutter (/shadcn-ui-flutter skill) to add new desired widget. A widget can be an atom, compound widget
+- Extract long widget into smaller widgets
 
 ## How to use this base project
 

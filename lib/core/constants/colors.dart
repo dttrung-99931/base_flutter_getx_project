@@ -8,4 +8,5 @@ class AppColors {
   static const white = Colors.white;
   static final white70 = Colors.white.withValues(alpha: 0.7);
   static final white90 = Colors.white.withValues(alpha: 0.9);
+  static final border = Colors.black45;
 }
