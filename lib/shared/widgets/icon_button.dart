@@ -1,5 +1,4 @@
 import 'package:base_flutter_getx/core/constants/colors.dart';
-import 'package:base_flutter_getx/core/constants/diemsions/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class AppIconButton extends StatelessWidget {
@@ -8,14 +7,15 @@ class AppIconButton extends StatelessWidget {
   final double size;
   final Color color;
   final EdgeInsets padding;
-  AppIconButton({super.key, 
+  AppIconButton({
+    super.key,
     required this.iconData,
     required this.onPressed,
     double? size,
     this.color = AppColors.primary,
     EdgeInsets? padding,
-  }) : size = size ?? s4,
-  padding = padding ?? EdgeInsets.all(s4);
+  })  : size = size ?? 4,
+        padding = padding ?? const EdgeInsets.all(4);
 
   @override
   Widget build(BuildContext context) {

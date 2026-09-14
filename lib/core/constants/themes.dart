@@ -1,7 +1,6 @@
 // ignore_for_file: unnecessary_late
 
 import 'package:base_flutter_getx/core/constants/colors.dart';
-import 'package:base_flutter_getx/core/constants/diemsions/dimensions.dart';
 import 'package:base_flutter_getx/core/constants/text_theme_adapter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -66,41 +65,41 @@ ShadThemeData _buildShadTheme({
     colorScheme: colorScheme,
     textTheme: ShadTextTheme(
       family: 'Urbanist',
-      h1: TextStyle(
-        fontSize: fz32,
+      h1: const TextStyle(
+        fontSize: 32,
         fontWeight: FontWeight.w600,
       ),
-      h2: TextStyle(
-        fontSize: fz24,
+      h2: const TextStyle(
+        fontSize: 24,
         fontWeight: FontWeight.w600,
       ),
-      h3: TextStyle(
-        fontSize: fz20,
+      h3: const TextStyle(
+        fontSize: 20,
         fontWeight: FontWeight.w600,
       ),
-      h4: TextStyle(
-        fontSize: fz18,
+      h4: const TextStyle(
+        fontSize: 18,
         fontWeight: FontWeight.w600,
       ),
-      p: TextStyle(
-        fontSize: fz16,
+      p: const TextStyle(
+        fontSize: 16,
         fontWeight: FontWeight.w600,
       ),
-      large: TextStyle(
-        fontSize: fz16,
+      large: const TextStyle(
+        fontSize: 16,
         fontWeight: FontWeight.w600,
       ),
-      small: TextStyle(
-        fontSize: fz14,
+      small: const TextStyle(
+        fontSize: 14,
         fontWeight: FontWeight.w600,
       ),
-      muted: TextStyle(
-        fontSize: fz12,
+      muted: const TextStyle(
+        fontSize: 12,
         fontWeight: FontWeight.w600,
       ),
       custom: {
-        'labelSmall': TextStyle(
-          fontSize: fz10,
+        'labelSmall': const TextStyle(
+          fontSize: 10,
           fontWeight: FontWeight.w600,
         ),
       },
@@ -109,8 +108,8 @@ ShadThemeData _buildShadTheme({
       backgroundColor: AppColors.primary,
       foregroundColor: AppColors.white90,
       
-      textStyle: TextStyle(
-        fontSize: fz16,
+      textStyle: const TextStyle(
+        fontSize: 16,
         fontWeight: FontWeight.w600,
       ),
     ),

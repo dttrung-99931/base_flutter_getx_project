@@ -203,6 +203,8 @@ class LoginController extends BaseController {
 - Used shadcn-ui-flutter widgets
 - When implementing new ui, look at /shard/widgets first, if there is no desired ui widget. Use shadcn-ui-flutter (/shadcn-ui-flutter skill) to add new desired widget. A widget can be an atom, compound widget
 - Extract long widget into smaller widgets
+- Use SizedBox shortcut: `.wsb` / `.hsb` (`lib/core/utils/extension/num_extensions.dart`)
+  - ex: `8.wsb` = `SizedBox(width: 8)`, `16.hsb` = `SizedBox(height: 16)`
 
 ### Responsive
 

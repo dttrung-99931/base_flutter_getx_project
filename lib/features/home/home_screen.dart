@@ -1,6 +1,6 @@
 import 'package:base_flutter_getx/core/constants/colors.dart';
-import 'package:base_flutter_getx/core/constants/diemsions/dimensions.dart';
 import 'package:base_flutter_getx/core/constants/themes.dart';
+import 'package:base_flutter_getx/core/utils/extension/num_extensions.dart';
 import 'package:base_flutter_getx/core/utils/extension/ui_extensions.dart';
 import 'package:base_flutter_getx/shared/widgets/title_icon_button.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +31,7 @@ class HomeScreen extends BaseGetWidget<HomeController> {
               Obx(
                 () => Text("Counter ${controller.counter.value}"),
               ),
-              h24sb,
+              24.hsb,
               TitleIconButton(
                 iconData: Icons.plus_one,
                 title: 'add'.tr,
@@ -39,7 +39,7 @@ class HomeScreen extends BaseGetWidget<HomeController> {
                   controller.increase();
                 },
               ),
-              h16sb,
+              16.hsb,
               TitleIconButton(
                 iconData: Icons.exposure_minus_1,
                 title: 'subtract'.tr,

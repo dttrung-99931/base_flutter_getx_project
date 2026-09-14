@@ -1,4 +1,4 @@
-import 'package:base_flutter_getx/core/constants/diemsions/dimensions.dart';
+import 'package:base_flutter_getx/core/utils/extension/num_extensions.dart';
 import 'package:base_flutter_getx/core/utils/validate.dart';
 import 'package:base_flutter_getx/features/login/controllers/login_controller.dart';
 import 'package:base_flutter_getx/shared/widgets/button/app_button.dart';
@@ -55,7 +55,7 @@ class _LoginFormState extends State<LoginForm> {
               return Validate.phone(value);
             },
           ),
-          h16sb,
+          16.hsb,
           AppInput(
             id: _passwordFieldId,
             label: 'password'.tr,
@@ -64,7 +64,7 @@ class _LoginFormState extends State<LoginForm> {
             isPassword: true,
             validator: Validate.pass,
           ),
-          h32sb,
+          32.hsb,
           Obx(() {
             final isLoading = widget.controller.isLoading;
             return AppButton(

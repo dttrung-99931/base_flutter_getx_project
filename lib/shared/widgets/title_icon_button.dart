@@ -1,5 +1,4 @@
 import 'package:base_flutter_getx/core/constants/colors.dart';
-import 'package:base_flutter_getx/core/constants/diemsions/dimensions.dart';
 import 'package:base_flutter_getx/core/constants/themes.dart';
 import 'package:flutter/material.dart';
 
@@ -24,9 +23,9 @@ class TitleIconButton extends StatelessWidget {
     double? iconSize,
     EdgeInsets? padding,
     double? iconAndTitleSpace,
-  })  : iconAndTitleSpace = iconAndTitleSpace ?? w8,
-        iconSize = iconSize ?? s20,
-        padding = padding ?? EdgeInsets.all(s4);
+  })  : iconAndTitleSpace = iconAndTitleSpace ?? 8,
+        iconSize = iconSize ?? 20,
+        padding = padding ?? const EdgeInsets.all(4);
 
   @override
   Widget build(BuildContext context) {
