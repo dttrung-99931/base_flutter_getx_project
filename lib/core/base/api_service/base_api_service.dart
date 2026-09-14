@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:base_flutter_getx/config/app_config.dart';
-import 'package:base_flutter_getx/core/base/api_service/api_service_logger.dart';
+import 'package:base_flutter_getx/core/base/api_service/api_logger_mixin.dart';
 import 'package:base_flutter_getx/core/base/base_model.dart';
 import 'package:base_flutter_getx/core/constants/constants.dart';
 import 'package:base_flutter_getx/core/error/app_error.dart';
@@ -15,8 +15,10 @@ import 'package:get/get.dart';
 import '../../error/exceptions/no_internet.dart';
 
 /// Base service class for handling API calls
-abstract class ApiService extends ApiServiceLogger implements GetxService {
-  ApiService() {
+abstract class BaseApiService extends GetConnect
+    with ApiLoggerMixin
+    implements GetxService {
+  BaseApiService() {
     baseUrl = AppConfig.config.apiUrl;
     allowAutoSignedCert = true;
     timeout = Constants.apiTimeOut;

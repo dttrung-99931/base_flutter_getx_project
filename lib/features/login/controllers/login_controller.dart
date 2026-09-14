@@ -24,6 +24,7 @@ class LoginController extends BaseController {
       ),
       onSuccess: (LoginResponse result) {
         _storage.token = result.token;
+        isLoginSucces.value = true;
         Get.offNamed(Routes.home);
       },
     );

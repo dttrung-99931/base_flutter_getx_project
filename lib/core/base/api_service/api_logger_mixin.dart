@@ -1,7 +1,7 @@
 import 'package:base_flutter_getx/core/utils/log.dart';
 import 'package:get/get.dart';
 
-class ApiServiceLogger extends GetConnect {
+mixin ApiLoggerMixin on GetConnect {
   @override
   Future<Response<T>> post<T>(String? url, body,
       {String? contentType,

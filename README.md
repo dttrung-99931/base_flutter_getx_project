@@ -50,7 +50,8 @@ lib/
 
 ### Add a new feature
 
-New feature should be placed in lib/features/${feature_name}
+New feature should be placed in lib/features/${feature_name}, feature's test should be placed in test/features/${feature_name} (check Testing section below).
+
 Ex: adding settings feature
 => lib/features/settings which includes
 
@@ -202,6 +203,10 @@ class LoginController extends BaseController {
 - Used shadcn-ui-flutter widgets
 - When implementing new ui, look at /shard/widgets first, if there is no desired ui widget. Use shadcn-ui-flutter (/shadcn-ui-flutter skill) to add new desired widget. A widget can be an atom, compound widget
 - Extract long widget into smaller widgets
+
+### Testing
+
+New added features should be cover unit test for controllers. Refer to example: test/features/login. Other components (services, widgets, ...) tests are skip temporarily
 
 ## How to use this base project
 
