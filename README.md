@@ -204,6 +204,11 @@ class LoginController extends BaseController {
 - When implementing new ui, look at /shard/widgets first, if there is no desired ui widget. Use shadcn-ui-flutter (/shadcn-ui-flutter skill) to add new desired widget. A widget can be an atom, compound widget
 - Extract long widget into smaller widgets
 
+### Responsive
+
+- This app use responsive_framework and already setup breakpoints in app.dart. UI will auto scale based on UI breakpoints
+- For screen/ui that need to custom layout across mobile, tablet and desktop => use lib/shared/widgets/adaptive_layout.dart
+
 ### Testing
 
 New added features should be cover unit test for controllers. Refer to example: test/features/login. Other components (services, widgets, ...) tests are skip temporarily

@@ -11,9 +11,9 @@ import 'package:base_flutter_getx/features/settings/controller.dart';
 import 'package:base_flutter_getx/global_binding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 import 'features/home/home_route.dart';
@@ -53,36 +53,45 @@ class App extends BaseGetWidget<SettingController> {
       onTap: () {
         FocusManager.instance.primaryFocus?.unfocus();
       },
-      child: ScreenUtilInit(
-        builder: (ctx, child) => ShadApp.custom(
-          theme: buildLightTheme(),
-          darkTheme: buildDarkTheme(),
-          themeMode: ThemeMode.system,
-          appBuilder: (context) {
-            return GetMaterialApp(
-              initialRoute: initialRoute,
-              getPages: [
-                homeRoute,
-                loginRoute,
-              ],
-              defaultTransition: Transition.cupertino,
-              transitionDuration: const Duration(milliseconds: 800),
-              debugShowCheckedModeBanner: false,
-              theme: Theme.of(context),
-              translations: AppTranslation(),
-              locale: controller.currentLocale,
-              localizationsDelegates: const [
-                GlobalShadLocalizations.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-              ],
-              builder: (context, child) {
-                return ShadAppBuilder(child: child!);
-              },
-            );
-          },
-        ),
+      child: ShadApp.custom(
+        theme: buildLightTheme(),
+        darkTheme: buildDarkTheme(),
+        themeMode: ThemeMode.system,
+        appBuilder: (context) {
+          return GetMaterialApp(
+            initialRoute: initialRoute,
+            getPages: [
+              homeRoute,
+              loginRoute,
+            ],
+            defaultTransition: Transition.cupertino,
+            transitionDuration: const Duration(milliseconds: 800),
+            debugShowCheckedModeBanner: false,
+            theme: Theme.of(context),
+            translations: AppTranslation(),
+            locale: controller.currentLocale,
+            localizationsDelegates: const [
+              GlobalShadLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            builder: (context, child) {
+              return ResponsiveBreakpoints.builder(
+                child: ShadAppBuilder(child: child!),
+                breakpoints: [
+                  const Breakpoint(start: 0, end: 599, name: MOBILE),
+                  const Breakpoint(start: 600, end: 1023, name: TABLET),
+                  const Breakpoint(
+                    start: 1024,
+                    end: double.infinity,
+                    name: DESKTOP,
+                  ),
+                ],
+              );
+            },
+          );
+        },
       ),
     );
   }

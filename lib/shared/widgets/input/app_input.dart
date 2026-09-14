@@ -2,7 +2,6 @@ import 'package:base_flutter_getx/core/constants/colors.dart';
 import 'package:base_flutter_getx/core/constants/themes.dart';
 import 'package:base_flutter_getx/core/utils/extension/ui_extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 class AppInput extends StatefulWidget {
@@ -38,7 +37,7 @@ class _AppInputState extends State<AppInput> {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 8.h,
+      spacing: 8,
       children: [
         if (widget.label != null)
           // Replace for ShadInputFormField.label to fix ShadInputFormField.label
@@ -57,21 +56,21 @@ class _AppInputState extends State<AppInput> {
           leading: widget.leadingIcon != null ? Icon(widget.leadingIcon) : null,
           trailing: widget.isPassword ? _passwordToggle() : null,
           validator: widget.validator,
-          padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
           decoration: ShadDecoration(
             border: ShadBorder.all(
               color: AppColors.border,
-              width: 1.r,
-              radius: BorderRadius.circular(8.r),
+              width: 1,
+              radius: BorderRadius.circular(8),
             ),
             secondaryFocusedBorder: ShadBorder.all(
               // Hide secondary border when focused
               width: 0,
             ),
             focusedBorder: ShadBorder.all(
-              width: 1.5.r,
+              width: 1.5,
               color: AppColors.primary,
-              radius: BorderRadius.circular(8.r),
+              radius: BorderRadius.circular(8),
             ),
             fallbackToLabelStyle: true,
           ),

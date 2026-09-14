@@ -13,7 +13,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.5
   get_storage: ^2.1.1
-  flutter_screenutil: ^5.9.3
+  responsive_framework: ^1.5.1
   dartz: ^0.10.1
   flutter_localizations:
     sdk: flutter
