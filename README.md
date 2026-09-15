@@ -1,8 +1,8 @@
-# Flutter Getx Base Project
+# Flutter Getx Base Project - Agent Coding Support
 
 ## Overview
 
-This is a base Flutter project utilizing the GetX package, featuring several pre-configured setups:
+This is a base Flutter project utilizing the GetX package with agent coding guideline Setup
 
 - **Architecture**: Widget - Controller - Service
 
@@ -45,6 +45,11 @@ lib/
 - **Translation**: Built-in support for multiple languages (check out SettingController)
 - **Error Handling**: Common error handling setup
 - **Features**: Includes a sample login feature
+
+## Environment Setup
+
+- Install flutter 3.41.0 via fvm (check .fvmrc): `fvm install`
+- Install flutter_skill to develop flutter app with AI Agent: https://pub.dev/packages/flutter_skill/install
 
 ## Source Base Guide & Conventions
 
@@ -215,17 +220,7 @@ class LoginController extends BaseController {
 
 New added features should be cover unit test for controllers. Refer to example: test/features/login. Other components (services, widgets, ...) tests are skip temporarily
 
-## How to use this base project
-
-### Clone this repo
-
-```sh
-git clone https://github.com/dttrung-99931/base_flutter_getx_project.git
-```
-
-### Rename project folder
-
-The default project folder is base_flutter_getx. You can rename this folder to new name you want
+## Others
 
 ### Update Bundle ID
 

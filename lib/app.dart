@@ -9,8 +9,10 @@ import 'package:base_flutter_getx/core/utils/error_handler/exception_handler.dar
 import 'package:base_flutter_getx/features/login/login_route.dart';
 import 'package:base_flutter_getx/features/settings/controller.dart';
 import 'package:base_flutter_getx/global_binding.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_skill/flutter_skill.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -22,6 +24,9 @@ import 'features/home/home_route.dart';
 void startApp() {
   // Run app in a zooned guarded to catch global exceptions
   runZonedGuarded(() async {
+    if (kDebugMode) {
+      FlutterSkillBinding.ensureInitialized();
+    }
     WidgetsFlutterBinding.ensureInitialized();
     await setup();
     runApp(const App());

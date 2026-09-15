@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "Mobile MCP": {
+      "command": "npx",
+      "args": ["-y", "@mobilenext/mobile-mcp@latest"],
+      "env": {}
+    },
+    "flutter-skill": {
+      "command": "flutter-skill",
+      "args": ["server"]
+    }
+  }
+}
