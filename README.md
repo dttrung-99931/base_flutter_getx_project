@@ -210,6 +210,7 @@ class LoginController extends BaseController {
 - Extract long widget into smaller widgets
 - Use SizedBox shortcut: `.wsb` / `.hsb` (`lib/core/utils/extension/num_extensions.dart`)
   - ex: `8.wsb` = `SizedBox(width: 8)`, `16.hsb` = `SizedBox(height: 16)`
+- Need to check UI in each supported languages. The UI is nice in EN but overflowed in VI
 
 ### Responsive
 
