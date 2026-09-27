@@ -47,9 +47,11 @@ Future<void> setup() async {
 
 class App extends BaseGetWidget<SettingController> {
   final String initialRoute;
+  final bool isResponsiveEnabled;
   const App({
     super.key,
     this.initialRoute = Routes.login,
+    this.isResponsiveEnabled = true,
   });
 
   @override
@@ -66,8 +68,8 @@ class App extends BaseGetWidget<SettingController> {
           return GetMaterialApp(
             initialRoute: initialRoute,
             getPages: [
-              homeRoute,
               loginRoute,
+              homeRoute,
             ],
             defaultTransition: Transition.cupertino,
             transitionDuration: const Duration(milliseconds: 800),
@@ -82,18 +84,22 @@ class App extends BaseGetWidget<SettingController> {
               GlobalWidgetsLocalizations.delegate,
             ],
             builder: (context, child) {
-              return ResponsiveBreakpoints.builder(
-                child: ShadAppBuilder(child: child!),
-                breakpoints: [
-                  const Breakpoint(start: 0, end: 599, name: MOBILE),
-                  const Breakpoint(start: 600, end: 1023, name: TABLET),
-                  const Breakpoint(
-                    start: 1024,
-                    end: double.infinity,
-                    name: DESKTOP,
-                  ),
-                ],
-              );
+              if (isResponsiveEnabled) {
+                return ResponsiveBreakpoints.builder(
+                  child: ShadAppBuilder(child: child!),
+                  breakpoints: [
+                    const Breakpoint(start: 0, end: 599, name: MOBILE),
+                    const Breakpoint(start: 600, end: 1023, name: TABLET),
+                    const Breakpoint(
+                      start: 1024,
+                      end: double.infinity,
+                      name: DESKTOP,
+                    ),
+                  ],
+                );
+              } else {
+                return ShadAppBuilder(child: child!);
+              }
             },
           );
         },

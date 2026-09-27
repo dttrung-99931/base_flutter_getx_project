@@ -1,6 +1,18 @@
 {
   "version": 1,
   "skills": {
+    "e2e-testing": {
+      "source": "ai-dashboad/flutter-skill",
+      "sourceType": "github",
+      "skillPath": "skills/e2e-testing/SKILL.md",
+      "computedHash": "ca98e12c48b2948ec84916fb9722eca9db2fa1533a608d068f276669d20b365a"
+    },
+    "flutter-testing-skill": {
+      "source": "LambdaTest/agent-skills",
+      "sourceType": "github",
+      "skillPath": "flutter-testing-skill/SKILL.md",
+      "computedHash": "1bee5175ca6134700bd342d46412eed92b66ad0dbe630b5900b3cb3ffbe4ca1f"
+    },
     "shadcn-ui-flutter": {
       "source": "nank1ro/flutter-shadcn-ui",
       "sourceType": "github",

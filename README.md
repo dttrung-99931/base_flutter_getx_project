@@ -48,8 +48,8 @@ lib/
 
 ## Environment Setup
 
+- Install fvm to manage flutter versions: https://fvm.app/documentation/getting-started/installation
 - Install flutter 3.41.0 via fvm (check .fvmrc): `fvm install`
-- Install flutter_skill to develop flutter app with AI Agent: https://pub.dev/packages/flutter_skill/install
 
 ## Source Base Guide & Conventions
 
@@ -219,7 +219,9 @@ class LoginController extends BaseController {
 
 ### Testing
 
-New added features should be cover unit test for controllers. Refer to example: test/features/login. Other components (services, widgets, ...) tests are skip temporarily
+New added features should be covered unit test, widget test & integration test.
+
+Use flutter-comprehensive-test-skill together with flutter-testing-skill to write unit test, widget test & integration test effectively
 
 ## Others
 
@@ -237,3 +239,38 @@ To change the bundle ID
    ```sh
    rename setBundleId --value your_bundle_id
    ```
+
+### Agent skills
+
+This repository has been setup with these skills:
+
+- e2e-testing help agents doing integration tests with prompt without test code
+- flutter-testing-skill help agents writing unit tests, widget tests and integration tests effectively
+- flutter-comprehensive-test-skill adds the feature coverage layers and the GetX and device rules from the login tests
+- shadcn-ui-flutter help agents agents using shadcn_ui lib to add missing base widgets while implementing UI
+
+To add additional skills, ensure you have Node.js installed. Then use the following command, replacing `$skill_name` with the desired skill:
+
+```
+npx skills add $skill_name
+```
+
+To update any skill that is already installed:
+
+shadcn-ui-flutter:
+
+```
+npx skills add nank1ro/flutter-shadcn-ui
+```
+
+e2e-testing:
+
+```
+npx skills add ai-dashboad/flutter-skill
+```
+
+flutter-testing-skill:
+
+```
+npx skills add https://github.com/LambdaTest/agent-skills --skill flutter-testing-skill
+```
