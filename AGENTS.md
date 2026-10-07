@@ -8,4 +8,9 @@ Read and follow README.md
 
 At the **start of each task**, read [.agents/experience.md](.agents/experience.md) if it exists and follow any notes that apply.
 
-When you do things not exactly what the user wanted and they must adjust or fix your work, add a **short** note to `.agents/experience.md` (what went wrong, what to do instead) **only if** skipping it would likely cause the same mistake again later. Do not log every slip — the purpose is to avoid repeat mistakes, not a full error diary. Keep entries brief so the file stays small — it is loaded in agent chats to save tokens on repeat mistakes.
+When the user has to correct or redo your work, add a note to `.agents/experience.md` — but **only if** the same mistake is likely to recur. This is a lesson list to prevent repeats, not an error diary; skip one-off slips. The file is loaded into every agent chat, so keep it small.
+
+Write each note so a future agent avoids the mistake without re-deriving it:
+- One line: a general rule, then a concrete `Ex:` that makes the rule obvious.
+- Make it portable — no reliance on this repo’s feature names or local context, since notes may be reused across projects.
+- Before adding, check for an existing note to extend instead of duplicating.
