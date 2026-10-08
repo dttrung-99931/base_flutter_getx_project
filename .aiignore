@@ -1,0 +1,85 @@
+# ---------- Dart / Flutter build output ----------
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# ---------- Generated code ----------
+*.g.dart
+*.freezed.dart
+*.mocks.dart
+*.gr.dart
+*.config.dart
+**/generated/
+lib/l10n/app_localizations*.dart
+
+# ---------- Android native build artifacts ----------
+android/.gradle/
+android/app/build/
+android/build/
+android/captures/
+android/local.properties
+android/gradle/wrapper/gradle-wrapper.jar
+*.apk
+*.aab
+*.jks
+*.keystore
+android/key.properties
+
+# ---------- iOS / macOS native build artifacts ----------
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/ephemeral/
+ios/build/
+ios/DerivedData/
+macos/Pods/
+macos/Flutter/ephemeral/
+*.ipa
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# ---------- Web / Linux / Windows build artifacts ----------
+web/.dart_tool/
+linux/flutter/ephemeral/
+windows/flutter/ephemeral/
+
+# ---------- Dependencies / lockfiles ----------
+pubspec.lock
+ios/Podfile.lock
+macos/Podfile.lock
+node_modules/
+
+# ---------- Secrets and environment ----------
+.env
+.env.*
+*.pem
+google-services.json
+GoogleService-Info.plist
+firebase_options.dart
+
+# ---------- Binary assets (no value to an LLM) ----------
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.ico
+*.ttf
+*.otf
+*.mp3
+*.mp4
+*.lottie
+assets/images/
+assets/fonts/
+assets/animations/
+
+# ---------- Coverage, logs, IDE, OS ----------
+coverage/
+*.log
+.idea/
+*.iml
+.vscode/
+.DS_Store
