@@ -247,7 +247,8 @@ This repository has been setup with these skills:
 - e2e-testing help agents doing integration tests with prompt without test code
 - flutter-testing-skill help agents writing unit tests, widget tests and integration tests effectively
 - flutter-comprehensive-test-skill adds the feature coverage layers and the GetX and device rules from the login tests
-- shadcn-ui-flutter help agents agents using shadcn_ui lib to add missing base widgets while implementing UI
+- shadcn-ui-flutter help agents using shadcn_ui lib to add missing base widgets while implementing UI
+- prepare-release helps agents generating google play/ app store release assets such feature screenshots, feature graphic, screenshot frame...
 
 To add additional skills, ensure you have Node.js installed. Then use the following command, replacing `$skill_name` with the desired skill:
 
