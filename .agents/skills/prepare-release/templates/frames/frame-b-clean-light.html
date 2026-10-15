@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1080, height=1920" />
+  <title>Frame B — Clean light</title>
+  <link rel="stylesheet" href="../fonts/fonts.css" />
+  <style>
+    :root {
+      --primary: #7C3AED;
+      --accent: #6366F1;
+      --text-dark: #0F172A;
+      --bg-light: #F8FAFC;
+      --canvas-w: 1080px;
+      --canvas-h: 1920px;
+      --slate-600: #475569;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: var(--canvas-w);
+      height: var(--canvas-h);
+      overflow: hidden;
+      font-family: 'Urbanist', system-ui, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+    .canvas {
+      position: relative;
+      width: var(--canvas-w);
+      height: var(--canvas-h);
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 70% 50% at 15% 10%, color-mix(in srgb, var(--primary) 18%, transparent), transparent 60%),
+        radial-gradient(ellipse 60% 45% at 90% 20%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 55%),
+        radial-gradient(ellipse 50% 40% at 70% 95%, color-mix(in srgb, var(--primary) 12%, transparent), transparent 50%),
+        var(--bg-light);
+    }
+    .copy {
+      position: absolute;
+      top: 5.2%;
+      left: 6.5%;
+      right: 6.5%;
+      text-align: center;
+      z-index: 2;
+    }
+    #title {
+      font-weight: 800;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+    }
+    #subtitle {
+      margin-top: 1vh;
+      font-weight: 500;
+      font-size: clamp(24px, 3.4vw, 38px);
+      line-height: 1.35;
+      color: var(--slate-600);
+    }
+    .phone-wrap {
+      position: absolute;
+      left: 50%;
+      top: 19.3%;
+      transform: translateX(-50%);
+      width: 76%;
+      max-width: 860px;
+      z-index: 1;
+    }
+    .phone {
+      width: 100%;
+      border-radius: 40px;
+      background: #FFFFFF;
+      padding: 14px;
+      box-shadow:
+        0 36px 80px rgba(15, 23, 42, 0.14),
+        0 0 0 1px rgba(15, 23, 42, 0.06);
+    }
+    .phone-screen {
+      border-radius: 30px;
+      overflow: hidden;
+      background: #fff;
+      aspect-ratio: 9 / 19.5;
+      height: auto;
+    }
+    .phone-screen img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      /* fill so bottom chrome (FAB) is not cropped */
+      object-fit: fill;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="copy">
+      <h1 id="title">Your headline</h1>
+      <p id="subtitle">Short supporting line</p>
+    </div>
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-screen">
+          <img id="shot" alt="App screenshot" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./frame-shared.js"></script>
+</body>
+</html>

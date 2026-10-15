@@ -1,0 +1,26 @@
+{
+  "imgBack": "06-finish-task.png",
+  "imgMain": "03-hour-calendar-adjust.png",
+  "theme": {
+    "primary": "#7C3AED",
+    "accent": "#6366F1",
+    "textDark": "#0F172A",
+    "bgLight": "#F8FAFC"
+  },
+  "locales": {
+    "en": {
+      "lang": "en",
+      "brand": "App Name",
+      "headline": "Your headline",
+      "sub": "Short description of what the app does for users.",
+      "chips": ["Feature one", "Feature two", "Feature three"]
+    },
+    "vi": {
+      "lang": "vi",
+      "brand": "App Name",
+      "headline": "Tiêu đề của bạn",
+      "sub": "Mô tả ngắn về những gì ứng dụng làm cho người dùng.",
+      "chips": ["Tính năng một", "Tính năng hai", "Tính năng ba"]
+    }
+  }
+}

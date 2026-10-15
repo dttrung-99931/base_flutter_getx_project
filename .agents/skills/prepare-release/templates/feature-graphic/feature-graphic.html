@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1024, height=500" />
+  <title>Feature graphic</title>
+  <link rel="stylesheet" href="../fonts/fonts.css" />
+  <style>
+    :root {
+      --primary: #7C3AED;
+      --accent: #6366F1;
+      --text-dark: #0F172A;
+      --bg-light: #F8FAFC;
+      --slate-600: #475569;
+      --white: #FFFFFF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1024px;
+      height: 500px;
+      overflow: hidden;
+      font-family: 'Urbanist', system-ui, sans-serif;
+      /* Opaque background — Play forbids alpha in feature graphics */
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+    .canvas {
+      position: relative;
+      width: 1024px;
+      height: 500px;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 70% 90% at 8% 20%, color-mix(in srgb, var(--primary) 22%, transparent), transparent 55%),
+        radial-gradient(ellipse 55% 80% at 95% 80%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 50%),
+        radial-gradient(ellipse 40% 60% at 70% 10%, color-mix(in srgb, var(--primary) 10%, transparent), transparent 50%),
+        var(--bg-light);
+    }
+    .left {
+      position: absolute;
+      left: 36px;
+      top: 0;
+      bottom: 0;
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 2;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--primary) 14%, transparent);
+      border: 2px solid color-mix(in srgb, var(--primary) 40%, transparent);
+    }
+    .brand-name {
+      font-weight: 800;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+      color: var(--text-dark);
+    }
+    .headline {
+      font-weight: 800;
+      font-size: 38px;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .sub {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.35;
+      color: var(--slate-600);
+      max-width: 380px;
+      margin-bottom: 20px;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      max-width: 390px;
+    }
+    .chip {
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 1;
+      color: var(--primary);
+      background: color-mix(in srgb, var(--primary) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--primary) 18%, transparent);
+      border-radius: 999px;
+      padding: 9px 14px;
+      white-space: nowrap;
+    }
+    .phones {
+      position: absolute;
+      right: 12px;
+      top: 10px;
+      width: 600px;
+      height: 480px;
+      z-index: 1;
+    }
+    .phone {
+      position: absolute;
+      background: #fff;
+      border-radius: 22px;
+      padding: 5px;
+      box-shadow:
+        0 20px 40px rgba(15, 23, 42, 0.18),
+        0 0 0 1px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+    }
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 17px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .phone img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .phone-main {
+      width: 270px;
+      height: 468px;
+      right: 20px;
+      top: 14px;
+      z-index: 2;
+    }
+    .phone-back {
+      width: 250px;
+      height: 434px;
+      right: 250px;
+      top: 14px;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="left">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="brand-name" id="brand">App Name</div>
+      </div>
+      <h1 class="headline" id="headline">Your headline</h1>
+      <p class="sub" id="sub">Short description of what the app does.</p>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="phones">
+      <div class="phone phone-back">
+        <div class="phone-screen">
+          <img id="imgBack" alt="" />
+        </div>
+      </div>
+      <div class="phone phone-main">
+        <div class="phone-screen">
+          <img id="imgMain" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const p = new URLSearchParams(location.search);
+      const root = document.documentElement;
+      if (p.get('primary')) root.style.setProperty('--primary', p.get('primary'));
+      if (p.get('accent')) root.style.setProperty('--accent', p.get('accent'));
+      if (p.get('textDark')) root.style.setProperty('--text-dark', p.get('textDark'));
+      if (p.get('bgLight')) root.style.setProperty('--bg-light', p.get('bgLight'));
+
+      document.documentElement.lang = p.get('lang') || 'en';
+      document.getElementById('brand').textContent = p.get('brand') || 'App Name';
+      document.getElementById('headline').textContent = p.get('headline') || 'Your headline';
+      document.getElementById('sub').textContent =
+        p.get('sub') || 'Short description of what the app does.';
+      const imgBack = p.get('imgBack') || '';
+      const imgMain = p.get('imgMain') || '';
+      if (imgBack) document.getElementById('imgBack').src = imgBack;
+      if (imgMain) document.getElementById('imgMain').src = imgMain;
+
+      const chipsEl = document.getElementById('chips');
+      chipsEl.innerHTML = '';
+      (p.get('chips') || 'Feature one|Feature two|Feature three')
+        .split('|')
+        .forEach((label) => {
+          const t = label.trim();
+          if (!t) return;
+          const span = document.createElement('span');
+          span.className = 'chip';
+          span.textContent = t;
+          chipsEl.appendChild(span);
+        });
+    })();
+  </script>
+</body>
+</html>

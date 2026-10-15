@@ -1,0 +1,27 @@
+{
+  "frame": "frame-b-clean-light.html",
+  "shots": [
+    {
+      "file": "01-create-goal.png",
+      "en": {
+        "title": "Create a goal",
+        "subtitle": "Set what you want and how many days"
+      },
+      "vi": {
+        "title": "Tạo mục tiêu",
+        "subtitle": "Đặt mục tiêu và số ngày cần"
+      }
+    },
+    {
+      "file": "02-draft-plan.png",
+      "en": {
+        "title": "Build your plan",
+        "subtitle": "Add tasks under each sub-goal"
+      },
+      "vi": {
+        "title": "Xây dựng kế hoạch",
+        "subtitle": "Thêm công việc cho mục tiêu con"
+      }
+    }
+  ]
+}
