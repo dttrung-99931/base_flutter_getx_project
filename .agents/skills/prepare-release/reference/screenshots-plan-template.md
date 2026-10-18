@@ -42,7 +42,14 @@ Use nested / multi-item data when the UI needs it (not empty or single-row only)
 ## Capture method
 
 1. Integration seed harness (or debug host) that lands the UI on each beat
-2. Mobile MCP (or iOS simulator tooling for `app_store`) to take the screenshot
+2. `flutter screenshot` to capture (not Mobile MCP):
+
+```bash
+flutter screenshot -d <device-id> -o {output}/{locale}/NN-feature-name.png
+```
+
+   Use default `--type=device` for full-device frames. For `app_store`, target an
+   iOS simulator with `-d`.
 3. Save as `{output}/{locale}/NN-feature-name.png`
 
 Do **not** implement capture until the user asks.

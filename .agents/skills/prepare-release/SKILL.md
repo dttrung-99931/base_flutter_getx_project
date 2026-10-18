@@ -28,7 +28,7 @@ prepare_release <option> [args]
 Options:
   gen_screenshots_plan [output-folder]
       Write a plan to capture feature screenshots (realistic seed data +
-      integration seed + Mobile MCP). Default output: release/screenshots
+      integration seed + flutter screenshot). Default output: release/screenshots
 
   gen_screenshot_graphic_frames [app_store]
       Render 3 graphic frame previews, then STOP and ask which frame to use.
@@ -75,10 +75,24 @@ Write a **screenshot plan only**. Do not capture until the user asks to implemen
 2. Write `.cursor/plans/release-screenshots.plan.md` using
    [reference/screenshots-plan-template.md](reference/screenshots-plan-template.md).
 3. Include: feature list, ordered journey beats, realistic demo seed table,
-   capture method (integration seed + Mobile MCP; iOS simulator when `app_store`),
-   naming `NN-feature-name.png`, locale folders, overflow check.
+   capture method (integration seed + `flutter screenshot`; iOS simulator when
+   `app_store`), naming `NN-feature-name.png`, locale folders, overflow check.
 4. Output folder: first non-flag arg, or default `release/screenshots`.
 5. Put that folder path clearly in the plan.
+
+### Capture with `flutter screenshot` (when implementing a plan)
+
+Do **not** use Mobile MCP to capture store screenshots. Prefer the Flutter CLI:
+
+```bash
+# App must already be running on the target device (e.g. flutter run …)
+flutter screenshot -d <device-id> -o <output>/{locale}/NN-feature-name.png
+```
+
+- Default `--type=device` captures the full device frame (status bar included) —
+  preferred for store listings.
+- Use `-d` for the emulator/simulator id; for App Store, target an iOS simulator.
+- Repeat per beat × locale after the seed harness lands each UI state.
 
 ## Option: `gen_screenshot_graphic_frames [app_store]`
 
